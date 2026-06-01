@@ -1,0 +1,35 @@
+{
+  "name": "Frontier Access Pass #0001",
+  "description": "An exclusive access pass to the FrontierX Protocol ecosystem. Stake to earn FRX tokens, unlock the AI Agent Hub, and enter the Game Zone.",
+  "image": "ipfs://bafybeifjyp7cplql6afwv4yfswk5lyfiixeapg2aifgc46hlvm4tjor65e/nft-art/rare.svg",
+  "external_url": "https://frontierx.khtain.com",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Tier",
+      "value": "Purple"
+    },
+    {
+      "trait_type": "Staking Multiplier",
+      "value": "1.5x"
+    },
+    {
+      "trait_type": "Daily FRX Yield",
+      "display_type": "number",
+      "value": 150
+    },
+    {
+      "trait_type": "Pass Number",
+      "display_type": "number",
+      "value": 1,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Access Level",
+      "value": "Full"
+    }
+  ]
+}

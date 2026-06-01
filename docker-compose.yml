@@ -1,0 +1,76 @@
+services:
+  hardhat:
+    build:
+      context: ./frontierx-contracts
+      target: dev
+    container_name: frontierx-hardhat
+    working_dir: /app
+    ports:
+      - "9831:8545"
+    volumes:
+      - ./frontierx-contracts:/app
+      - frontierx_contracts_node_modules:/app/node_modules
+    environment:
+      LOCAL_RPC_URL: http://127.0.0.1:8545
+      PRIVATE_KEY: ${PRIVATE_KEY:-}
+      TREASURY_WALLET: ${TREASURY_WALLET:-}
+      SEPOLIA_RPC_URL: ${SEPOLIA_RPC_URL:-}
+      POLYGON_RPC_URL: ${POLYGON_RPC_URL:-}
+      BASE_RPC_URL: ${BASE_RPC_URL:-}
+      ETHERSCAN_API_KEY: ${ETHERSCAN_API_KEY:-}
+      POLYGONSCAN_API_KEY: ${POLYGONSCAN_API_KEY:-}
+      BASESCAN_API_KEY: ${BASESCAN_API_KEY:-}
+      ALLOW_MAINNET_DEPLOY: ${ALLOW_MAINNET_DEPLOY:-false}
+    command: npm run node
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8545', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({jsonrpc:'2.0', id:1, method:'eth_chainId', params:[]})}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: ./frontierx-web
+      target: dev
+    container_name: frontierx-web
+    working_dir: /app
+    ports:
+      - "9830:3000"
+    volumes:
+      - ./frontierx-web:/app
+      - frontierx_web_node_modules:/app/node_modules
+      - frontierx_web_next:/app/.next
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_LOCAL_RPC_URL: http://127.0.0.1:9831
+      NEXT_PUBLIC_WC_PROJECT_ID: ${NEXT_PUBLIC_WC_PROJECT_ID:-}
+      NEXT_PUBLIC_LOCAL_FRX_TOKEN_ADDRESS: ${NEXT_PUBLIC_LOCAL_FRX_TOKEN_ADDRESS:-0x5FbDB2315678afecb367f032d93F642f64180aa3}
+      NEXT_PUBLIC_LOCAL_FRONTIER_PASS_ADDRESS: ${NEXT_PUBLIC_LOCAL_FRONTIER_PASS_ADDRESS:-0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512}
+      NEXT_PUBLIC_LOCAL_FRX_STAKING_ADDRESS: ${NEXT_PUBLIC_LOCAL_FRX_STAKING_ADDRESS:-0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0}
+      NEXT_PUBLIC_LOCAL_FRX_LOTTERY_ADDRESS: ${NEXT_PUBLIC_LOCAL_FRX_LOTTERY_ADDRESS:-0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9}
+      NEXT_PUBLIC_LOCAL_CRYSTAL_FORGE_ADDRESS: ${NEXT_PUBLIC_LOCAL_CRYSTAL_FORGE_ADDRESS:-0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9}
+      NEXT_PUBLIC_SEPOLIA_RPC_URL: ${NEXT_PUBLIC_SEPOLIA_RPC_URL:-https://ethereum-sepolia-rpc.publicnode.com}
+      NEXT_PUBLIC_SEPOLIA_FRX_TOKEN_ADDRESS: ${NEXT_PUBLIC_SEPOLIA_FRX_TOKEN_ADDRESS:-}
+      NEXT_PUBLIC_SEPOLIA_FRONTIER_PASS_ADDRESS: ${NEXT_PUBLIC_SEPOLIA_FRONTIER_PASS_ADDRESS:-}
+      NEXT_PUBLIC_SEPOLIA_FRX_STAKING_ADDRESS: ${NEXT_PUBLIC_SEPOLIA_FRX_STAKING_ADDRESS:-}
+      NEXT_PUBLIC_SEPOLIA_FRX_LOTTERY_ADDRESS: ${NEXT_PUBLIC_SEPOLIA_FRX_LOTTERY_ADDRESS:-}
+      NEXT_PUBLIC_SEPOLIA_CRYSTAL_FORGE_ADDRESS: ${NEXT_PUBLIC_SEPOLIA_CRYSTAL_FORGE_ADDRESS:-}
+      NEXT_PUBLIC_PINATA_GATEWAY_URL: ${NEXT_PUBLIC_PINATA_GATEWAY_URL:-https://gateway.pinata.cloud}
+      SEPOLIA_RPC_URL: ${SEPOLIA_RPC_URL:-}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+      MINIMAX_API_KEY: ${MINIMAX_API_KEY:-}
+      MINIMAX_BASE_URL: ${MINIMAX_BASE_URL:-https://api.minimax.io/v1}
+      PINATA_API_KEY: ${PINATA_API_KEY:-}
+      PINATA_SECRET_KEY: ${PINATA_SECRET_KEY:-}
+      PINATA_JWT: ${PINATA_JWT:-}
+      PINATA_GATEWAY_URL: ${PINATA_GATEWAY_URL:-}
+    depends_on:
+      hardhat:
+        condition: service_healthy
+    command: npm run dev -- --hostname 0.0.0.0 --webpack
+
+volumes:
+  frontierx_contracts_node_modules:
+  frontierx_web_node_modules:
+  frontierx_web_next:

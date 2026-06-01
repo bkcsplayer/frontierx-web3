@@ -1,0 +1,49 @@
+# Local-only guides (not published to GitHub)
+AGENTS.md
+DESIGN.md
+
+# Secrets and environment
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+id_rsa
+id_rsa.*
+
+# Dependencies and build output
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+.vercel/
+
+# Hardhat / Solidity
+artifacts/
+cache/
+typechain-types/
+frontierx-contracts/artifacts/
+frontierx-contracts/cache/
+frontierx-contracts/typechain-types/
+frontierx-contracts/coverage/
+
+# Logs and OS
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# IDE / local tooling
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker local volumes (if ever mounted into tree)
+.docker/

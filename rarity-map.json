@@ -1,0 +1,702 @@
+{
+  "1": {
+    "tokenId": 1,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "2": {
+    "tokenId": 2,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "3": {
+    "tokenId": 3,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "4": {
+    "tokenId": 4,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "5": {
+    "tokenId": 5,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "6": {
+    "tokenId": 6,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "7": {
+    "tokenId": 7,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "8": {
+    "tokenId": 8,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "9": {
+    "tokenId": 9,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "10": {
+    "tokenId": 10,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "11": {
+    "tokenId": 11,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "12": {
+    "tokenId": 12,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "13": {
+    "tokenId": 13,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "14": {
+    "tokenId": 14,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "15": {
+    "tokenId": 15,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "16": {
+    "tokenId": 16,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "17": {
+    "tokenId": 17,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "18": {
+    "tokenId": 18,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "19": {
+    "tokenId": 19,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "20": {
+    "tokenId": 20,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "21": {
+    "tokenId": 21,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "22": {
+    "tokenId": 22,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "23": {
+    "tokenId": 23,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "24": {
+    "tokenId": 24,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "25": {
+    "tokenId": 25,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "26": {
+    "tokenId": 26,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "27": {
+    "tokenId": 27,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "28": {
+    "tokenId": 28,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "29": {
+    "tokenId": 29,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "30": {
+    "tokenId": 30,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "31": {
+    "tokenId": 31,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "32": {
+    "tokenId": 32,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "33": {
+    "tokenId": 33,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "34": {
+    "tokenId": 34,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "35": {
+    "tokenId": 35,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "36": {
+    "tokenId": 36,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "37": {
+    "tokenId": 37,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "38": {
+    "tokenId": 38,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "39": {
+    "tokenId": 39,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "40": {
+    "tokenId": 40,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "41": {
+    "tokenId": 41,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "42": {
+    "tokenId": 42,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "43": {
+    "tokenId": 43,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "44": {
+    "tokenId": 44,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "45": {
+    "tokenId": 45,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "46": {
+    "tokenId": 46,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "47": {
+    "tokenId": 47,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "48": {
+    "tokenId": 48,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "49": {
+    "tokenId": 49,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "50": {
+    "tokenId": 50,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "51": {
+    "tokenId": 51,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "52": {
+    "tokenId": 52,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "53": {
+    "tokenId": 53,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "54": {
+    "tokenId": 54,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "55": {
+    "tokenId": 55,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "56": {
+    "tokenId": 56,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "57": {
+    "tokenId": 57,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "58": {
+    "tokenId": 58,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "59": {
+    "tokenId": 59,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "60": {
+    "tokenId": 60,
+    "rarity": "common",
+    "tier": 1,
+    "stakingMultiplier": "1x",
+    "dailyYield": "100 FRX"
+  },
+  "61": {
+    "tokenId": 61,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "62": {
+    "tokenId": 62,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "63": {
+    "tokenId": 63,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "64": {
+    "tokenId": 64,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "65": {
+    "tokenId": 65,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "66": {
+    "tokenId": 66,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "67": {
+    "tokenId": 67,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "68": {
+    "tokenId": 68,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "69": {
+    "tokenId": 69,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "70": {
+    "tokenId": 70,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "71": {
+    "tokenId": 71,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "72": {
+    "tokenId": 72,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "73": {
+    "tokenId": 73,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "74": {
+    "tokenId": 74,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "75": {
+    "tokenId": 75,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "76": {
+    "tokenId": 76,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "77": {
+    "tokenId": 77,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "78": {
+    "tokenId": 78,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "79": {
+    "tokenId": 79,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "80": {
+    "tokenId": 80,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "81": {
+    "tokenId": 81,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "82": {
+    "tokenId": 82,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "83": {
+    "tokenId": 83,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "84": {
+    "tokenId": 84,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "85": {
+    "tokenId": 85,
+    "rarity": "rare",
+    "tier": 2,
+    "stakingMultiplier": "1.5x",
+    "dailyYield": "150 FRX"
+  },
+  "86": {
+    "tokenId": 86,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "87": {
+    "tokenId": 87,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "88": {
+    "tokenId": 88,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "89": {
+    "tokenId": 89,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "90": {
+    "tokenId": 90,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "91": {
+    "tokenId": 91,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "92": {
+    "tokenId": 92,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "93": {
+    "tokenId": 93,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "94": {
+    "tokenId": 94,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "95": {
+    "tokenId": 95,
+    "rarity": "epic",
+    "tier": 3,
+    "stakingMultiplier": "2.5x",
+    "dailyYield": "250 FRX"
+  },
+  "96": {
+    "tokenId": 96,
+    "rarity": "legendary",
+    "tier": 4,
+    "stakingMultiplier": "5x",
+    "dailyYield": "500 FRX"
+  },
+  "97": {
+    "tokenId": 97,
+    "rarity": "legendary",
+    "tier": 4,
+    "stakingMultiplier": "5x",
+    "dailyYield": "500 FRX"
+  },
+  "98": {
+    "tokenId": 98,
+    "rarity": "legendary",
+    "tier": 4,
+    "stakingMultiplier": "5x",
+    "dailyYield": "500 FRX"
+  },
+  "99": {
+    "tokenId": 99,
+    "rarity": "legendary",
+    "tier": 4,
+    "stakingMultiplier": "5x",
+    "dailyYield": "500 FRX"
+  },
+  "100": {
+    "tokenId": 100,
+    "rarity": "legendary",
+    "tier": 4,
+    "stakingMultiplier": "5x",
+    "dailyYield": "500 FRX"
+  }
+}

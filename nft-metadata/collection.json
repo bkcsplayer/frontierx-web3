@@ -1,0 +1,8 @@
+{
+  "name": "Frontier Access Pass",
+  "description": "100 exclusive access passes to the FrontierX Protocol, a Web3 x AI ecosystem for staking, games, and AI agent utilities.",
+  "image": "ipfs://bafybeifjyp7cplql6afwv4yfswk5lyfiixeapg2aifgc46hlvm4tjor65e/nft-art/placeholder.svg",
+  "external_link": "https://frontierx.khtain.com",
+  "seller_fee_basis_points": 500,
+  "fee_recipient": "0xa6Bc880B46991c45204f1E35c339Bae777aCDbff"
+}

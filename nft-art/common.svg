@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200" role="img" aria-label="FrontierX COMMON Access Pass SHARED">
+  <defs>
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="25%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="75%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="glass" cx="50%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.13"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.18"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1200" fill="#0A0E1A" rx="32"/>
+  <rect x="24" y="24" width="752" height="1152" fill="url(#glass)" stroke="#3B82F6" stroke-width="2" rx="28" filter="url(#glow)"/>
+  <rect x="70" y="62" width="660" height="112" fill="rgba(255,255,255,0.04)" stroke="#3B82F6" stroke-width="1" rx="18" opacity="0.9"/>
+  <text x="400" y="112" text-anchor="middle" fill="#3B82F6" font-family="Orbitron, monospace" font-size="30" font-weight="700" letter-spacing="5" filter="url(#glow)">FRONTIERX PROTOCOL</text>
+  <text x="400" y="150" text-anchor="middle" fill="#F8FAFC" font-family="JetBrains Mono, monospace" font-size="16" letter-spacing="9" opacity="0.76">ACCESS PASS</text>
+  <rect x="100" y="220" width="600" height="600" fill="rgba(255,255,255,0.025)" stroke="#3B82F6" stroke-width="1" rx="24" opacity="0.85"/>
+  <circle cx="400" cy="500" r="188" fill="none" stroke="#3B82F6" stroke-width="1.2" opacity="0.34"/>
+  <circle cx="400" cy="500" r="156" fill="none" stroke="#3B82F6" stroke-width="0.8" opacity="0.22"/>
+  <g filter="url(#glow)">
+    <polygon points="400,332 520,410 520,590 400,668 280,590 280,410" fill="rgba(255,255,255,0.02)" stroke="#3B82F6" stroke-width="2" opacity="0.95"/>
+    <polygon points="400,372 484,424 484,576 400,628 316,576 316,424" fill="#3B82F6" fill-opacity="0.14" stroke="#3B82F6" stroke-width="1.6" opacity="0.92"/>
+    <polygon points="400,412 448,444 448,556 400,588 352,556 352,444" fill="#3B82F6" fill-opacity="0.24" stroke="#3B82F6" stroke-width="1.2" opacity="0.88"/>
+    <path d="M 400 372 L 484 424 L 400 500 L 316 424 Z" fill="#3B82F6" fill-opacity="0.1" stroke="#3B82F6" stroke-width="0.9" opacity="0.7"/>
+    <path d="M 400 500 L 484 576 L 400 628 L 316 576 Z" fill="#3B82F6" fill-opacity="0.08" stroke="#3B82F6" stroke-width="0.9" opacity="0.65"/>
+    <line x1="400" y1="332" x2="400" y2="668" stroke="#3B82F6" stroke-width="0.8" opacity="0.45"/>
+    <line x1="280" y1="500" x2="520" y2="500" stroke="#3B82F6" stroke-width="0.8" opacity="0.45"/>
+    <line x1="316" y1="424" x2="484" y2="576" stroke="#3B82F6" stroke-width="0.7" opacity="0.35"/>
+    <line x1="484" y1="424" x2="316" y2="576" stroke="#3B82F6" stroke-width="0.7" opacity="0.35"/>
+    <circle cx="400" cy="500" r="18" fill="#F8FAFC" fill-opacity="0.92" stroke="#3B82F6" stroke-width="1.2"/>
+    <circle cx="400" cy="500" r="42" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.35"/>
+  </g>
+  <g opacity="0.55">
+    <line x1="150" y1="250" x2="230" y2="310" stroke="#3B82F6" stroke-width="0.8"/>
+    <line x1="650" y1="250" x2="570" y2="310" stroke="#3B82F6" stroke-width="0.8"/>
+    <line x1="150" y1="750" x2="230" y2="690" stroke="#3B82F6" stroke-width="0.8"/>
+    <line x1="650" y1="750" x2="570" y2="690" stroke="#3B82F6" stroke-width="0.8"/>
+  </g>
+  <line x1="130" y1="860" x2="670" y2="860" stroke="#3B82F6" stroke-width="1" opacity="0.42"/>
+  <text x="400" y="920" text-anchor="middle" fill="#3B82F6" font-family="Orbitron, monospace" font-size="34" font-weight="700" letter-spacing="6" filter="url(#glow)">COMMON</text>
+  <text x="400" y="966" text-anchor="middle" fill="#F8FAFC" font-family="JetBrains Mono, monospace" font-size="18" opacity="0.78">COMMON SHARED ART</text>
+  <text x="400" y="1012" text-anchor="middle" fill="#CBD5E1" font-family="JetBrains Mono, monospace" font-size="15" opacity="0.72">YIELD 100 FRX DAILY · MULTIPLIER 1x</text>
+  <rect x="80" y="1066" width="640" height="10" rx="5" fill="#3B82F6" opacity="0.82"/>
+  <text x="400" y="1126" text-anchor="middle" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="4">KHTAIN BLOCK TECHNOLOGY LTD</text>
+</svg>

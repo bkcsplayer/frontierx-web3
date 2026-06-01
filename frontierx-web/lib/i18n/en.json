@@ -1,0 +1,190 @@
+{
+  "nav": {
+    "home": "FrontierX home",
+    "mint": "Mint",
+    "stake": "Stake",
+    "arena": "Arena",
+    "aiHub": "AI Hub",
+    "dashboard": "Dashboard",
+    "language": "Language"
+  },
+  "footer": {
+    "company": "KHTAIN Block Technology Ltd · FrontierX Protocol"
+  },
+  "hero": {
+    "badge": "Full lifecycle contracts passing · Docker Web 9830 · RPC 9831",
+    "title": "FrontierX Protocol",
+    "description": "A premium Web3 command center where NFT access, FRX staking rewards, token utility, and AI agents meet in one full-stack protocol demo.",
+    "connect": "Connect Wallet",
+    "explore": "Explore Economy",
+    "stats": {
+      "passes": "Limited Access Passes",
+      "token": "FRX Utility Token",
+      "chains": "Public Chains",
+      "agents": "AI Agents"
+    },
+    "loopEyebrow": "Protocol Loop",
+    "loopTitle": "A compact Web3 economy that is readable, testable, and playable.",
+    "startMinting": "Start with minting →",
+    "flow": {
+      "mintTitle": "Mint Pass",
+      "mintBody": "Claim one of 100 Frontier Access Pass NFTs.",
+      "stakeTitle": "Stake NFT",
+      "stakeBody": "Lock the pass to generate FRX rewards by rarity.",
+      "arenaTitle": "Play Arena",
+      "arenaBody": "Use FRX for lottery rounds and Crystal Forge.",
+      "aiTitle": "Power AI",
+      "aiBody": "Burn FRX to unlock token-gated AI utilities."
+    },
+    "dualTokenTitle": "Dual-token protocol loop",
+    "dualTokenBody": "Mint a Frontier Access Pass, stake it to earn FRX, then use FRX for lottery entries, Crystal Forge plays, and AI agent calls.",
+    "aiUtilityTitle": "Token-powered AI utility",
+    "aiUtilityBody": "AI agents verify on-chain FRX burns before returning reports, content, and knowledge distillation results through Vercel APIs.",
+    "buildStatus": "Live Build Status",
+    "contracts": "Contracts",
+    "tests": "Tests",
+    "nftAssets": "NFT Assets",
+    "deflationTitle": "Deflationary game pressure",
+    "deflationBody": "Crystal Forge requests lock FRX first, settle later with fixed request-block entropy, and refund if the settlement window expires."
+  },
+  "mint": {
+    "eyebrow": "Frontier Access Pass",
+    "title": "Mint Your Protocol Key",
+    "description": "Mint a limited Frontier Access Pass, verify NFT-gated access, and prepare for staking, games, and token-powered AI utilities.",
+    "cardTitle": "Frontier Access Pass",
+    "cardBody": "A limited access credential for staking rewards, game entry, and AI agent utility.",
+    "console": "Mint Console",
+    "mintPass": "Mint your pass",
+    "inventory": "Wallet Inventory",
+    "myPasses": "My Frontier Passes"
+  },
+  "gate": {
+    "connectTitle": "Connect wallet to check access",
+    "connectDescription": "Your wallet will be checked for either a held Frontier Pass or a staked pass.",
+    "notConfiguredTitle": "NFT gate is not fully configured",
+    "notConfiguredDescription": "Set both FrontierPass and FRXStaking addresses for the current chain so staked passes can count as access.",
+    "errorTitle": "Could not verify pass access",
+    "loadingTitle": "Checking pass access",
+    "loadingDescription": "Reading wallet and staking state from the active chain.",
+    "deniedTitle": "Access denied",
+    "deniedDescription": "You need a Frontier Access Pass in your wallet or staked in the protocol to unlock this section.",
+    "mintNow": "Mint now ↑",
+    "verified": "Pass Holder Verified",
+    "welcome": "Welcome to the inner sanctum.",
+    "welcomeBody": "This content is visible because your wallet has effective pass access. Staked passes count too, so users do not lose access while earning FRX."
+  },
+  "stake": {
+    "title": "Staking Dashboard",
+    "totalStaked": "Total Staked",
+    "pending": "Pending $FRX",
+    "totalEarned": "Total Earned",
+    "claimAll": "Claim All",
+    "stake": "Stake",
+    "unstake": "Unstake",
+    "dailyRate": "Daily Rate"
+  },
+  "arena": {
+    "eyebrow": "Game Zone",
+    "title": "Arena",
+    "description": "NFT-gated game surfaces powered by FRX. Staked Frontier Pass holders remain eligible because the gate reads `FRXStaking.effectivePassHolder()`.",
+    "access": "Access verified. Lottery entry uses FRX approval followed by transfer into the pool.",
+    "split": "Prize split: 90% winner / 10% treasury",
+    "lottery": {
+      "title": "Daily Lottery",
+      "pool": "Current Pool",
+      "entries": "Entries",
+      "nextDraw": "Next Draw",
+      "enter": "Enter Lottery",
+      "minEntry": "Minimum entry: 10 $FRX"
+    },
+    "forge": {
+      "title": "Crystal Forge",
+      "cost": "Cost per forge",
+      "forge": "Forge Crystal"
+    }
+  },
+  "ai": {
+    "eyebrow": "Phase 5 / AI Integration",
+    "title": "AI Agent Hub",
+    "description": "Burn $FRX to unlock token-gated AI workflows. Each request is verified on-chain and signed by your wallet before the backend calls the model provider.",
+    "balance": "Your $FRX Balance",
+    "verifiedTitle": "Choose an AI agent and pay with burned $FRX.",
+    "verifiedBody": "The burn transaction, request payload, nonce, and wallet signature are sent together so the backend can reject copied receipts and expired requests.",
+    "expanded": "Expanded Agent",
+    "results": "Results",
+    "response": "AI response",
+    "emptyResult": "The AI-generated markdown report will appear here after the burn transaction confirms and the signed request passes backend verification.",
+    "privacy": "Do not paste private keys, seed phrases, confidential customer data, or sensitive documents. AI prompts are sent to the configured model provider after burn verification.",
+    "confirmTitle": "Confirm FRX Burn",
+    "confirmBody": "This will burn {{cost}} $FRX from your wallet. After the burn confirms, you will sign a request proving this AI call belongs to your wallet.",
+    "burnLaunch": "Burn and launch",
+    "cancel": "Cancel",
+    "retry": "Retry signed request",
+    "scout": {
+      "title": "AI Search Visibility Scout",
+      "description": "Analyze how a brand may appear in AI search engines and get optimization priorities.",
+      "placeholder": "Enter business name or URL",
+      "label": "Business name or website URL",
+      "help": "Example: frontierx.ai or FutureFrontier Technology",
+      "action": "Analyze"
+    },
+    "content": {
+      "title": "Smart Content Forge",
+      "description": "Turn a topic into platform-native content for LinkedIn, X, WeChat, or Xiaohongshu.",
+      "label": "Topic or key message",
+      "help": "Keep this specific for a better platform-native result.",
+      "platform": "Platform",
+      "platformHelp": "The system prompt changes for each platform's writing style.",
+      "placeholder": "Enter topic or key message",
+      "action": "Generate",
+      "platforms": {
+        "linkedin": "LinkedIn",
+        "twitter": "X / Twitter",
+        "wechat": "WeChat",
+        "xiaohongshu": "Xiaohongshu"
+      }
+    },
+    "distill": {
+      "title": "Knowledge Distiller",
+      "description": "Distill long notes, docs, or articles into a structured markdown knowledge card.",
+      "label": "Source text",
+      "help": "Paste up to 8,000 characters of notes, docs, or article text.",
+      "placeholder": "Paste your text here...",
+      "action": "Distill"
+    }
+  },
+  "dashboard": {
+    "eyebrow": "Protocol Analytics",
+    "title": "Dashboard",
+    "description": "Public chain telemetry for FrontierX. Token economics, pass supply, game state, and recent protocol activity refresh every 30 seconds.",
+    "refresh": "Refresh",
+    "rpcError": "Dashboard data could not be refreshed from the active RPC. Try again in a moment or switch networks.",
+    "notConfigured": "Dashboard not configured for this chain",
+    "treasury": "Treasury",
+    "burned": "Total Burned",
+    "minted": "Total Minted",
+    "circulating": "Circulating",
+    "nftsMinted": "NFTs Minted",
+    "nftsStaked": "NFTs Staked",
+    "frontierPass": "Frontier Pass",
+    "supplyCustody": "NFT supply and custody",
+    "mintProgress": "Mint progress",
+    "gameEconomy": "Game Economy",
+    "lotteryForge": "Lottery and forge state",
+    "lotteryRound": "Lottery Round",
+    "pool": "Pool",
+    "entries": "Entries",
+    "forgePlays": "Forge Plays",
+    "recentActivity": "Recent Activity",
+    "eventStream": "Protocol event stream",
+    "chainStatus": "Chain Status",
+    "configuredNetworks": "Configured networks",
+    "active": "Active",
+    "available": "Available",
+    "contractsConfigured": "{{count}}/5 protocol contracts configured"
+  },
+  "network": {
+    "localSepoliaHint": "You are on Local Hardhat. Sepolia deployments are not visible here — switch MetaMask and the network menu to Sepolia.",
+    "wrongChainHint": "You are on {{chain}}. Switch MetaMask and the network menu to Sepolia to test the live deployment."
+  }
+}

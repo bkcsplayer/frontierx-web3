@@ -1,0 +1,12 @@
+{
+  "name": "Frontier Access Pass (Unrevealed)",
+  "description": "This Frontier Access Pass has not been revealed yet. Stay tuned.",
+  "image": "ipfs://bafybeifjyp7cplql6afwv4yfswk5lyfiixeapg2aifgc46hlvm4tjor65e/nft-art/placeholder.svg",
+  "external_url": "https://frontierx.khtain.com",
+  "attributes": [
+    {
+      "trait_type": "Status",
+      "value": "Unrevealed"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "nav": {
+    "home": "FrontierX 首页",
+    "mint": "铸造",
+    "stake": "质押",
+    "arena": "竞技场",
+    "aiHub": "AI 中心",
+    "dashboard": "数据面板",
+    "language": "语言"
+  },
+  "footer": {
+    "company": "KHTAIN Block Technology Ltd · FrontierX Protocol"
+  },
+  "hero": {
+    "badge": "完整合约流程已通过 · Docker Web 9830 · RPC 9831",
+    "title": "FrontierX Protocol",
+    "description": "一个高级 Web3 指挥中心，把 NFT 权限、FRX 质押收益、代币效用和 AI Agent 放进同一个全栈协议演示。",
+    "connect": "连接钱包",
+    "explore": "探索经济模型",
+    "stats": {
+      "passes": "限量通行证",
+      "token": "FRX 效用代币",
+      "chains": "公共链",
+      "agents": "AI Agent"
+    },
+    "loopEyebrow": "协议循环",
+    "loopTitle": "一个紧凑、可读、可测试、可玩的 Web3 经济系统。",
+    "startMinting": "从铸造开始 →",
+    "flow": {
+      "mintTitle": "铸造通行证",
+      "mintBody": "领取 100 张限量 Frontier Access Pass NFT 之一。",
+      "stakeTitle": "质押 NFT",
+      "stakeBody": "锁定通行证，按稀有度产生 FRX 奖励。",
+      "arenaTitle": "进入竞技场",
+      "arenaBody": "用 FRX 参与抽奖和 Crystal Forge。",
+      "aiTitle": "驱动 AI",
+      "aiBody": "销毁 FRX 解锁代币门控 AI 工具。"
+    },
+    "dualTokenTitle": "双代币协议循环",
+    "dualTokenBody": "铸造 Frontier Access Pass，质押赚取 FRX，再用 FRX 参与抽奖、Crystal Forge 和 AI Agent 调用。",
+    "aiUtilityTitle": "代币驱动的 AI 效用",
+    "aiUtilityBody": "AI Agent 会先验证链上 FRX 销毁，再通过 Vercel API 返回报告、内容和知识蒸馏结果。",
+    "buildStatus": "实时构建状态",
+    "contracts": "合约",
+    "tests": "测试",
+    "nftAssets": "NFT 资产",
+    "deflationTitle": "通缩型游戏压力",
+    "deflationBody": "Crystal Forge 先锁定 FRX，再用固定请求区块熵延迟结算，若结算窗口过期则可退款。"
+  },
+  "mint": {
+    "eyebrow": "Frontier 通行证",
+    "title": "铸造你的协议钥匙",
+    "description": "铸造限量 Frontier Access Pass，验证 NFT 门控权限，并进入质押、游戏和代币驱动 AI 工具。",
+    "cardTitle": "Frontier Access Pass",
+    "cardBody": "用于质押奖励、游戏入口和 AI Agent 效用的限量访问凭证。",
+    "console": "铸造控制台",
+    "mintPass": "铸造通行证",
+    "inventory": "钱包库存",
+    "myPasses": "我的 Frontier Pass"
+  },
+  "gate": {
+    "connectTitle": "连接钱包以检查权限",
+    "connectDescription": "系统会检查你的钱包是否持有 Frontier Pass，或是否已有通行证在质押中。",
+    "notConfiguredTitle": "NFT 门控尚未完整配置",
+    "notConfiguredDescription": "请为当前链设置 FrontierPass 和 FRXStaking 地址，这样质押中的通行证也能计入权限。",
+    "errorTitle": "无法验证通行证权限",
+    "loadingTitle": "正在检查通行证权限",
+    "loadingDescription": "正在从当前链读取钱包和质押状态。",
+    "deniedTitle": "访问被拒绝",
+    "deniedDescription": "你需要在钱包中持有 Frontier Access Pass，或在协议中质押通行证，才能解锁此区域。",
+    "mintNow": "立即铸造 ↑",
+    "verified": "通行证持有者已验证",
+    "welcome": "欢迎进入核心区域。",
+    "welcomeBody": "此内容可见，因为你的钱包拥有有效通行证权限。质押中的通行证同样计入权限，因此赚取 FRX 时不会失去访问资格。"
+  },
+  "stake": {
+    "title": "质押面板",
+    "totalStaked": "已质押总数",
+    "pending": "待领取 $FRX",
+    "totalEarned": "总收益",
+    "claimAll": "全部领取",
+    "stake": "质押",
+    "unstake": "解除质押",
+    "dailyRate": "日产出"
+  },
+  "arena": {
+    "eyebrow": "游戏区",
+    "title": "竞技场",
+    "description": "由 FRX 驱动的 NFT 门控游戏界面。已质押 Frontier Pass 的用户仍然符合资格，因为门控读取 `FRXStaking.effectivePassHolder()`。",
+    "access": "访问已验证。抽奖入口会先授权 FRX，然后转入奖池。",
+    "split": "奖金分配：90% 给赢家 / 10% 进入国库",
+    "lottery": {
+      "title": "每日抽奖",
+      "pool": "当前奖池",
+      "entries": "参与数",
+      "nextDraw": "下次开奖",
+      "enter": "参与抽奖",
+      "minEntry": "最低投入：10 $FRX"
+    },
+    "forge": {
+      "title": "水晶锻造",
+      "cost": "每次消耗",
+      "forge": "锻造水晶"
+    }
+  },
+  "ai": {
+    "eyebrow": "Phase 5 / AI 集成",
+    "title": "AI Agent 中心",
+    "description": "销毁 $FRX 解锁代币门控 AI 工作流。每次请求都会先链上验证，并由你的钱包签名，然后后端才会调用模型服务。",
+    "balance": "你的 $FRX 余额",
+    "verifiedTitle": "选择一个 AI Agent，并用销毁的 $FRX 支付。",
+    "verifiedBody": "销毁交易、请求内容、nonce 和钱包签名会一起发送，后端可以拒绝复制来的收据和过期请求。",
+    "expanded": "展开的 Agent",
+    "results": "结果",
+    "response": "AI 响应",
+    "emptyResult": "销毁交易确认且签名请求通过后，AI 生成的 Markdown 报告会显示在这里。",
+    "privacy": "不要粘贴私钥、助记词、客户机密数据或敏感文档。AI prompt 会在销毁验证后发送给已配置的模型服务商。",
+    "confirmTitle": "确认销毁 FRX",
+    "confirmBody": "这将从你的钱包销毁 {{cost}} $FRX。销毁确认后，你还需要签名证明这次 AI 调用属于你的钱包。",
+    "burnLaunch": "销毁并启动",
+    "cancel": "取消",
+    "retry": "重试签名请求",
+    "scout": {
+      "title": "AI 搜索可见度分析",
+      "description": "分析品牌可能如何出现在 AI 搜索引擎中，并获得优化优先级。",
+      "placeholder": "输入企业名称或网址",
+      "label": "企业名称或网站 URL",
+      "help": "例如：frontierx.ai 或 FutureFrontier Technology",
+      "action": "开始分析"
+    },
+    "content": {
+      "title": "智能内容锻造坊",
+      "description": "把一个主题转化为适配 LinkedIn、X、微信公众号或小红书的平台原生内容。",
+      "label": "主题或核心观点",
+      "help": "输入越具体，生成结果越贴近平台语境。",
+      "platform": "平台",
+      "platformHelp": "不同平台会使用不同的写作风格提示词。",
+      "placeholder": "输入主题或核心观点",
+      "action": "生成",
+      "platforms": {
+        "linkedin": "LinkedIn",
+        "twitter": "X / Twitter",
+        "wechat": "微信公众号",
+        "xiaohongshu": "小红书"
+      }
+    },
+    "distill": {
+      "title": "知识蒸馏器",
+      "description": "把长笔记、文档或文章蒸馏成结构化 Markdown 知识卡片。",
+      "label": "源文本",
+      "help": "可粘贴最多 8,000 字符的笔记、文档或文章内容。",
+      "placeholder": "在此粘贴文本...",
+      "action": "开始蒸馏"
+    }
+  },
+  "dashboard": {
+    "eyebrow": "协议数据",
+    "title": "数据面板",
+    "description": "FrontierX 的公开链上遥测。代币经济、通行证供应、游戏状态和最近协议活动每 30 秒刷新一次。",
+    "refresh": "刷新",
+    "rpcError": "无法从当前 RPC 刷新数据。请稍后重试或切换网络。",
+    "notConfigured": "当前链尚未配置数据面板",
+    "treasury": "国库",
+    "burned": "总销毁量",
+    "minted": "总铸造量",
+    "circulating": "流通量",
+    "nftsMinted": "已铸造 NFT",
+    "nftsStaked": "已质押 NFT",
+    "frontierPass": "Frontier Pass",
+    "supplyCustody": "NFT 供应与托管",
+    "mintProgress": "铸造进度",
+    "gameEconomy": "游戏经济",
+    "lotteryForge": "抽奖与锻造状态",
+    "lotteryRound": "抽奖轮次",
+    "pool": "奖池",
+    "entries": "参与数",
+    "forgePlays": "锻造次数",
+    "recentActivity": "最近活动",
+    "eventStream": "协议事件流",
+    "chainStatus": "链状态",
+    "configuredNetworks": "已配置网络",
+    "active": "当前",
+    "available": "可用",
+    "contractsConfigured": "已配置 {{count}}/5 个协议合约"
+  },
+  "network": {
+    "localSepoliaHint": "当前为 Local Hardhat，看不到 Sepolia 部署数据。请在 MetaMask 与顶部网络菜单中切换到 Sepolia。",
+    "wrongChainHint": "当前为 {{chain}}。请在 MetaMask 与顶部网络菜单中切换到 Sepolia，以测试已部署合约。"
+  }
+}

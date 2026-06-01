@@ -1,0 +1,30 @@
+{
+  "sepolia": {
+    "network": "sepolia",
+    "chainId": 11155111,
+    "deployer": "0xa6Bc880B46991c45204f1E35c339Bae777aCDbff",
+    "treasuryWallet": "0xa6Bc880B46991c45204f1E35c339Bae777aCDbff",
+    "royaltyReceiver": "0xa6Bc880B46991c45204f1E35c339Bae777aCDbff",
+    "mintPriceWei": "3000000000000000",
+    "placeholderURI": "ipfs://bafybeigf6popixfc6pq3mbvzkkiqux7te2wvhhi4v6lqm54dfmyia7tda4/nft-metadata/placeholder.json",
+    "frxToken": "0xeD710ff884e9a46d2d96555f80225AE801c94C1D",
+    "frontierPass": "0x6fAC02B2c00A49eC6D893455AE65256d7E8836B7",
+    "staking": "0xe5d76b7a5ab7e1ADDf707Fa6aF980345440aBAD2",
+    "lottery": "0x9976F14605352E09231bBF2DA0Fb61a4FD049F68",
+    "crystalForge": "0x4739cE88ab7F557Ee385F5208b2C616510F4CD53",
+    "transactions": {
+      "frxToken": "0xfc7ab1987a406ae6df1d74575dd304441f3925a4d93a1ffe8c9866a9e0a0b04f",
+      "frontierPass": "0xa143705b19efe3ec24b0aa12b9cee7301af7b0cce68082d53d39f44f27d76369",
+      "staking": "0x455ade87a979d5a70abd1722acb72cf2b0956984d89b556744d1379c81d3786f",
+      "lottery": "0x0bcbd21d71b5efaedde1460b8bfa72e71dc153d79777b5ed941e773078c8be51",
+      "crystalForge": "0x799282aeb9394f6b23f3c5fd129b3987334233214f19aca766ddc056f349d5e5",
+      "setStakingContract": "0x63f13f616f5cb18ed52055c05f2bc8570d57ec31da68426efabd7c48a24b5c48"
+    },
+    "deployedAt": "2026-06-01T16:12:38.424Z",
+    "blockNumber": 10968913,
+    "metadataBaseURI": "ipfs://bafybeigf6popixfc6pq3mbvzkkiqux7te2wvhhi4v6lqm54dfmyia7tda4/nft-metadata/",
+    "revealTransaction": "0x0cf3552d123f55eb4584ebcaa7f980cb8bd3c8798aa0bb5aba1816b9e22b7178",
+    "revealedAt": "2026-06-01T16:25:37.352Z",
+    "revealBlockNumber": 10968973
+  }
+}

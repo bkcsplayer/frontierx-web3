@@ -1,0 +1,32 @@
+{
+  "images": {
+    "status": "uploaded",
+    "cid": "bafybeifjyp7cplql6afwv4yfswk5lyfiixeapg2aifgc46hlvm4tjor65e",
+    "baseURI": "ipfs://bafybeifjyp7cplql6afwv4yfswk5lyfiixeapg2aifgc46hlvm4tjor65e/nft-art/",
+    "metadataArgument": "--imagesCID=bafybeifjyp7cplql6afwv4yfswk5lyfiixeapg2aifgc46hlvm4tjor65e/nft-art",
+    "uploadedAt": "2026-06-01T06:54:10.457Z",
+    "pinName": "FrontierX-NFT-Images",
+    "numberOfFiles": 5,
+    "note": "Pinata Free-compatible shared image set: common.svg, rare.svg, epic.svg, legendary.svg, placeholder.svg."
+  },
+  "metadata": {
+    "status": "uploaded",
+    "cid": "bafybeigf6popixfc6pq3mbvzkkiqux7te2wvhhi4v6lqm54dfmyia7tda4",
+    "baseURI": "ipfs://bafybeigf6popixfc6pq3mbvzkkiqux7te2wvhhi4v6lqm54dfmyia7tda4/nft-metadata/",
+    "uploadedAt": "2026-06-01T06:54:29.099Z",
+    "pinName": "FrontierX-NFT-Metadata",
+    "numberOfFiles": 402,
+    "localDirectory": "nft-metadata",
+    "validation": "passed",
+    "revealBaseURI": "ipfs://bafybeigf6popixfc6pq3mbvzkkiqux7te2wvhhi4v6lqm54dfmyia7tda4/nft-metadata/"
+  },
+  "pinataFreePlan": {
+    "fileLimit": 500,
+    "targetDesignFiles": {
+      "images": 5,
+      "metadata": 402,
+      "total": 407,
+      "headroom": 93
+    }
+  }
+}

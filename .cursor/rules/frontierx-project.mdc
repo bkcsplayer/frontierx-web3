@@ -1,0 +1,14 @@
+---
+description: FrontierX project source-of-truth and design rules
+alwaysApply: true
+---
+
+# FrontierX Project Rules
+
+- Read `AGENTS.md` before implementation.
+- Read `DESIGN.md` before any UI work.
+- Follow `doc/06-STEP-BY-STEP-EXECUTION.md` step by step.
+- Do not skip alignment checkpoints.
+- Use `doc/01-SMART-CONTRACTS.md` for contracts, `doc/03-FRONTEND-DESIGN.md` for frontend behavior, and `doc/04-BACKEND-API.md` for AI API work.
+- Production UI must use SVG icons, not emoji icons.
+- Do not deploy mainnet contracts, spend real funds, or expose secrets without explicit user approval.

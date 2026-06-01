@@ -1,0 +1,12 @@
+**/node_modules
+**/.next
+**/artifacts
+**/cache
+**/coverage
+**/typechain-types
+**/.env
+**/.env.local
+**/.env.*.local
+.git
+.cursor
+graphify-out
