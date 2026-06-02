@@ -146,6 +146,8 @@ export function useFRXLottery(entryAmount = "10") {
   const minEntry = minEntryQuery.data ?? parseEther("10");
   const isRoundFull = entryCount >= maxEntries;
   const isBelowMinEntry = parsedEntryAmount !== undefined && entryAmountWei < minEntry;
+  const frxBalance = frx.balance;
+  const hasEnoughBalance = parsedEntryAmount !== undefined && frxBalance >= entryAmountWei;
   const readError =
     minEntryQuery.error ??
     maxEntriesQuery.error ??
@@ -160,9 +162,11 @@ export function useFRXLottery(entryAmount = "10") {
       ? "Enter a valid FRX amount."
       : isBelowMinEntry
         ? `Minimum entry is ${formatEther(minEntry)} FRX.`
-        : isRoundFull
-          ? "This lottery round is full. Wait for the next draw."
-          : undefined;
+        : !hasEnoughBalance
+          ? `Insufficient FRX. You have ${formatEther(frxBalance)} FRX but need ${entryAmount || formatEther(minEntry)} FRX.`
+          : isRoundFull
+            ? "This lottery round is full. Wait for the next draw."
+            : undefined;
   const txError = writeError ?? receiptError ?? frx.approvalError;
   const isLoading =
     minEntryQuery.isLoading ||
@@ -232,7 +236,9 @@ export function useFRXLottery(entryAmount = "10") {
     userEntryFormatted: formatEther(userEntryAmount),
     winProbability,
     isRoundFull,
+    frxBalance,
     frxBalanceFormatted: frx.balanceFormatted,
+    hasEnoughBalance,
     hasEntryAllowance: frx.hasAllowance,
     isApproving: frx.isApproving,
     isApprovalConfirmed: frx.isApprovalConfirmed,

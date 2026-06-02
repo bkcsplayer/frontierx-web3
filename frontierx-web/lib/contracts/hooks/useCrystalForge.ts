@@ -11,6 +11,7 @@ import {
 } from "wagmi";
 import { crystalForgeAbi } from "@/lib/contracts/abis/crystalForge";
 import { useChainConfig } from "@/lib/contracts/hooks/useChainConfig";
+import { isZeroPlayer, parsePendingForge } from "@/lib/contracts/forge-pending";
 import { refetchAllSettled, voidRefetch } from "@/lib/utils/query";
 import { useFRXToken } from "@/lib/contracts/hooks/useFRXToken";
 
@@ -42,11 +43,34 @@ export function useCrystalForge() {
   const frx = useFRXToken(crystalForgeAddress, playCost ? formatEther(playCost) : "0");
   const { refetchAllowance, refetchBalance } = frx;
 
+  const nextRequestIdQuery = useReadContract({
+    address: crystalForgeAddress,
+    abi: crystalForgeAbi,
+    functionName: "nextRequestId",
+    query: { enabled: canRead, refetchInterval: 10_000 },
+  });
+
+  const latestRequestId =
+    nextRequestIdQuery.data && nextRequestIdQuery.data > BigInt(1)
+      ? nextRequestIdQuery.data - BigInt(1)
+      : undefined;
+
+  const latestPendingQuery = useReadContract({
+    address: crystalForgeAddress,
+    abi: crystalForgeAbi,
+    functionName: "pendingForges",
+    args: [latestRequestId ?? BigInt(0)],
+    query: {
+      enabled: canRead && latestRequestId !== undefined,
+      refetchInterval: 10_000,
+    },
+  });
+
   const blockNumberQuery = useBlockNumber({
     chainId,
     query: {
       enabled: canRead,
-      refetchInterval: 10_000,
+      refetchInterval: 4_000,
     },
   });
 
@@ -68,13 +92,6 @@ export function useCrystalForge() {
     address: crystalForgeAddress,
     abi: crystalForgeAbi,
     functionName: "totalPaidOut",
-    query: { enabled: canRead, refetchInterval: 10_000 },
-  });
-
-  const nextRequestIdQuery = useReadContract({
-    address: crystalForgeAddress,
-    abi: crystalForgeAbi,
-    functionName: "nextRequestId",
     query: { enabled: canRead, refetchInterval: 10_000 },
   });
 
@@ -114,7 +131,7 @@ export function useCrystalForge() {
     query: { enabled: Boolean(txHash) },
   });
 
-  const trackedRequestId = useMemo(() => {
+  const trackedRequestIdFromReceipt = useMemo(() => {
     if (!receipt) return undefined;
 
     for (const log of receipt.logs) {
@@ -136,14 +153,26 @@ export function useCrystalForge() {
     return undefined;
   }, [receipt]);
 
+  const openRequestIdFromChain = useMemo(() => {
+    if (!address || !latestRequestId) return undefined;
+
+    const pending = parsePendingForge(latestPendingQuery.data);
+    if (!pending || pending.settled || isZeroPlayer(pending.player)) return undefined;
+    if (getAddress(pending.player) !== getAddress(address)) return undefined;
+
+    return latestRequestId;
+  }, [address, latestPendingQuery.data, latestRequestId]);
+
+  const activeRequestId = trackedRequestIdFromReceipt ?? openRequestIdFromChain;
+
   const pendingForgeQuery = useReadContract({
     address: crystalForgeAddress,
     abi: crystalForgeAbi,
     functionName: "pendingForges",
-    args: [trackedRequestId ?? BigInt(0)],
+    args: [activeRequestId ?? BigInt(0)],
     query: {
-      enabled: canRead && Boolean(trackedRequestId),
-      refetchInterval: 10_000,
+      enabled: canRead && Boolean(activeRequestId),
+      refetchInterval: 4_000,
     },
   });
 
@@ -159,6 +188,7 @@ export function useCrystalForge() {
       () => playerPlaysQuery.refetch(),
       () => playerWinningsQuery.refetch(),
       () => pendingForgeQuery.refetch(),
+      () => latestPendingQuery.refetch(),
       () => historyQuery.refetch(),
       () => refetchAllowance(),
       () => refetchBalance(),
@@ -168,6 +198,7 @@ export function useCrystalForge() {
     historyQuery,
     isConfirmed,
     nextRequestIdQuery,
+    latestPendingQuery,
     pendingForgeQuery,
     playerPlaysQuery,
     playerWinningsQuery,
@@ -185,25 +216,32 @@ export function useCrystalForge() {
     voidRefetch(refetchAllowance);
   }, [frx.isApprovalConfirmed, refetchAllowance]);
 
-  const pendingForge = pendingForgeQuery.data;
-  const pendingPlayer = pendingForge?.[0] ?? zeroAddress;
+  const pendingForge = parsePendingForge(pendingForgeQuery.data);
+  const pendingPlayer = pendingForge?.player ?? zeroAddress;
   const isOwnPendingRequest =
-    Boolean(address) && pendingPlayer !== zeroAddress && getAddress(pendingPlayer) === getAddress(address ?? zeroAddress);
-  const pendingPaid = pendingForge?.[1] ?? BigInt(0);
-  const pendingRequestBlock = pendingForge?.[2] ?? BigInt(0);
-  const pendingSettled = pendingForge?.[3] ?? false;
+    Boolean(address) &&
+    !isZeroPlayer(pendingPlayer) &&
+    getAddress(pendingPlayer) === getAddress(address ?? zeroAddress);
+  const pendingPaid = pendingForge?.paid ?? BigInt(0);
+  const pendingRequestBlock = pendingForge?.requestBlock ?? BigInt(0);
+  const pendingSettled = pendingForge?.settled ?? false;
   const currentBlock = blockNumberQuery.data ?? BigInt(0);
+  const blocksUntilSettle =
+    pendingRequestBlock > BigInt(0) && currentBlock <= pendingRequestBlock
+      ? pendingRequestBlock - currentBlock + BigInt(1)
+      : BigInt(0);
+  const hasEnoughBalance = frx.balance >= playCost;
   const canSettle =
-    Boolean(trackedRequestId) &&
+    Boolean(activeRequestId) &&
     isOwnPendingRequest &&
-    pendingPlayer !== zeroAddress &&
+    !isZeroPlayer(pendingPlayer) &&
     !pendingSettled &&
     currentBlock > pendingRequestBlock &&
     currentBlock <= pendingRequestBlock + BigInt(256);
   const canRefund =
-    Boolean(trackedRequestId) &&
+    Boolean(activeRequestId) &&
     isOwnPendingRequest &&
-    pendingPlayer !== zeroAddress &&
+    !isZeroPlayer(pendingPlayer) &&
     !pendingSettled &&
     currentBlock > pendingRequestBlock + BigInt(256);
 
@@ -258,6 +296,15 @@ export function useCrystalForge() {
 
   const requestForge = () => {
     ensureReady();
+
+    if (!hasEnoughBalance) {
+      throw new Error(`Insufficient FRX. Forge costs ${formatEther(playCost)} FRX.`);
+    }
+
+    if (activeRequestId && !pendingSettled) {
+      throw new Error("Settle or refund the current forge request before starting another.");
+    }
+
     setTxChainId(chainId);
     writeContract({
       address: crystalForgeAddress,
@@ -269,7 +316,7 @@ export function useCrystalForge() {
   const settleForge = () => {
     ensureReady();
 
-    if (!trackedRequestId) {
+    if (!activeRequestId) {
       throw new Error("No tracked forge request to settle.");
     }
 
@@ -278,14 +325,14 @@ export function useCrystalForge() {
       address: crystalForgeAddress,
       abi: crystalForgeAbi,
       functionName: "settleForge",
-      args: [trackedRequestId],
+      args: [activeRequestId],
     });
   };
 
   const refundExpiredForge = () => {
     ensureReady();
 
-    if (!trackedRequestId) {
+    if (!activeRequestId) {
       throw new Error("No tracked forge request to refund.");
     }
 
@@ -294,7 +341,7 @@ export function useCrystalForge() {
       address: crystalForgeAddress,
       abi: crystalForgeAbi,
       functionName: "refundExpiredForge",
-      args: [trackedRequestId],
+      args: [activeRequestId],
     });
   };
 
@@ -318,8 +365,10 @@ export function useCrystalForge() {
     playerPlays: playerPlaysQuery.data ?? BigInt(0),
     playerWinnings: playerWinningsQuery.data ?? BigInt(0),
     playerWinningsFormatted: formatEther(playerWinningsQuery.data ?? BigInt(0)),
-    trackedRequestId,
+    trackedRequestId: activeRequestId,
     isOwnPendingRequest,
+    blocksUntilSettle,
+    hasEnoughBalance,
     pendingPaid,
     pendingPaidFormatted: formatEther(pendingPaid),
     pendingRequestBlock,

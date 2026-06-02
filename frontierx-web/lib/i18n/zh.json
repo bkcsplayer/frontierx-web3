@@ -95,12 +95,44 @@
       "entries": "参与数",
       "nextDraw": "下次开奖",
       "enter": "参与抽奖",
-      "minEntry": "最低投入：10 $FRX"
+      "minEntry": "最低投入：10 $FRX",
+      "howToTitle": "怎么玩（2 步）",
+      "steps": {
+        "1": {
+          "title": "授权 FRX",
+          "body": "点击 Approve FRX，在 MetaMask 确认。这是允许抽奖合约划转你输入的金额。"
+        },
+        "2": {
+          "title": "参与抽奖",
+          "body": "点击 Enter lottery（默认 10 FRX），在钱包确认。交易成功后，Current Pool 和 Entries 才会增加。只点授权不会进池。"
+        }
+      },
+      "tips": "钱包里至少要有 10 FRX。不够请先去 /stake 领取质押奖励。MetaMask 与网站网络菜单都要选 Sepolia。"
     },
     "forge": {
       "title": "水晶锻造",
       "cost": "每次消耗",
-      "forge": "锻造水晶"
+      "forge": "锻造水晶",
+      "howToTitle": "怎么玩（4 步）",
+      "steps": {
+        "1": {
+          "title": "授权 FRX",
+          "body": "点击 Approve FRX，在 MetaMask 确认（单次锻造授权 5 FRX）。"
+        },
+        "2": {
+          "title": "锻造水晶",
+          "body": "点击 Forge crystal 并确认。5 FRX 进入锻造合约，并生成一条 pending 请求。"
+        },
+        "3": {
+          "title": "等待 1 个区块",
+          "body": "结算要在下一个 Sepolia 区块才能点（通常不到 1 分钟）。区块未到之前 Settle 按钮会是灰色。"
+        },
+        "4": {
+          "title": "结算锻造",
+          "body": "点击 Settle forge 并确认。会出现 SHATTER / GLOW / BLAZE / SUPERNOVA 及对应 FRX 奖励。完成后可从第 1 步再玩一轮。"
+        }
+      },
+      "tips": "完整一轮 = 授权 → 锻造 → 等待 → 结算。不要只点授权就以为已经玩完。每次锻造需要至少 5 FRX。"
     }
   },
   "ai": {

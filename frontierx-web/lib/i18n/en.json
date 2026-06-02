@@ -95,12 +95,44 @@
       "entries": "Entries",
       "nextDraw": "Next Draw",
       "enter": "Enter Lottery",
-      "minEntry": "Minimum entry: 10 $FRX"
+      "minEntry": "Minimum entry: 10 $FRX",
+      "howToTitle": "How to play (2 steps)",
+      "steps": {
+        "1": {
+          "title": "Approve FRX",
+          "body": "Click Approve FRX and confirm in MetaMask. This lets the lottery contract pull your entry amount."
+        },
+        "2": {
+          "title": "Enter lottery",
+          "body": "Click Enter lottery (default 10 FRX). After the transaction confirms, Current Pool and Entries will update. Approve alone does not enter the round."
+        }
+      },
+      "tips": "Need at least 10 FRX in your wallet. Claim staking rewards on /stake first if your balance is low. Use Sepolia in MetaMask and in the site network menu."
     },
     "forge": {
       "title": "Crystal Forge",
       "cost": "Cost per forge",
-      "forge": "Forge Crystal"
+      "forge": "Forge Crystal",
+      "howToTitle": "How to play (4 steps)",
+      "steps": {
+        "1": {
+          "title": "Approve FRX",
+          "body": "Click Approve FRX and confirm in MetaMask (5 FRX allowance for one forge)."
+        },
+        "2": {
+          "title": "Forge crystal",
+          "body": "Click Forge crystal and confirm. 5 FRX moves into the forge contract and creates a pending request."
+        },
+        "3": {
+          "title": "Wait one block",
+          "body": "Settlement unlocks in the next Sepolia block (usually under a minute). The Settle button stays disabled until the chain advances."
+        },
+        "4": {
+          "title": "Settle forge",
+          "body": "Click Settle forge and confirm. You receive SHATTER, GLOW, BLAZE, or SUPERNOVA with the matching payout. Then you can start another round from step 1."
+        }
+      },
+      "tips": "Each full round is Approve → Forge → wait → Settle. Do not click only Approve and expect a result. Need 5+ FRX per forge."
     }
   },
   "ai": {

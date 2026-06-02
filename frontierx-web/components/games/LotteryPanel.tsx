@@ -1,21 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { CircleDollarSign, Clock3, Dices, ShieldAlert, Trophy, Users, type LucideIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { zeroAddress } from "viem";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Loading } from "@/components/ui/Loading";
 import { ConnectWalletButton } from "@/components/wallet/ConnectWalletButton";
 import { CountdownTimer } from "@/components/games/CountdownTimer";
+import { PlayStepsGuide } from "@/components/games/PlayStepsGuide";
 import { useFRXLottery } from "@/lib/contracts/hooks/useFRXLottery";
 import { shortenAddress } from "@/lib/utils/format";
 
 export function LotteryPanel() {
+  const { t } = useTranslation();
   const [entryAmount, setEntryAmount] = useState("10");
   const [actionError, setActionError] = useState<string | undefined>();
   const lottery = useFRXLottery(entryAmount);
+
+  const lotterySteps = useMemo(
+    () => [
+      { title: t("arena.lottery.steps.1.title"), body: t("arena.lottery.steps.1.body") },
+      { title: t("arena.lottery.steps.2.title"), body: t("arena.lottery.steps.2.body") },
+    ],
+    [t],
+  );
+
+  const lotteryCurrentStep = !lottery.isConnected
+    ? 1
+    : !lottery.hasEntryAllowance
+      ? 1
+      : lottery.userEntryAmount > BigInt(0)
+        ? undefined
+        : 2;
 
   const canApprove =
     lottery.isConnected &&
@@ -39,9 +58,11 @@ export function LotteryPanel() {
       ? "Connect a wallet before entering the lottery."
       : !lottery.isConfigured
         ? "Configure FRX token and lottery addresses for this chain."
-        : !lottery.hasEntryAllowance
-          ? "Approve FRX before entering the lottery."
-          : "Ready to enter the lottery.");
+        : !lottery.hasEnoughBalance
+          ? `Need at least ${entryAmount} FRX in your wallet (staking rewards must be claimed first).`
+          : !lottery.hasEntryAllowance
+            ? "Approve FRX before entering the lottery."
+            : "Ready to enter the lottery.");
   const drawActionReason = lottery.canDraw
     ? "Winner draw is ready."
     : "Draw becomes available when the timer reaches zero and at least one entry exists.";
@@ -75,7 +96,10 @@ export function LotteryPanel() {
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-4">
+      <PlayStepsGuide title={t("arena.lottery.howToTitle")} steps={lotterySteps} currentStep={lotteryCurrentStep} />
+      <p className="mt-4 text-sm leading-6 text-[var(--text-muted)]">{t("arena.lottery.tips")}</p>
+
+      <div className="mt-8 grid gap-4 md:grid-cols-4">
         <Metric icon={CircleDollarSign} label="Current Pool" value={`${Number(lottery.currentPoolFormatted).toFixed(4)} FRX`} />
         <Metric icon={Users} label="Entries" value={`${lottery.entryCount.toString()} / ${lottery.maxEntries.toString()}`} />
         <Metric icon={Clock3} label="Next Draw" value={<CountdownTimer seconds={lottery.timeUntilDraw} />} />

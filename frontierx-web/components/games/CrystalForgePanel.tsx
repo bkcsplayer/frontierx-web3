@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { formatEther } from "viem";
 import { CircleDollarSign, Gem, History, RotateCcw, ShieldAlert, Sparkles, Zap, type LucideIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Loading } from "@/components/ui/Loading";
 import { ConnectWalletButton } from "@/components/wallet/ConnectWalletButton";
+import { PlayStepsGuide } from "@/components/games/PlayStepsGuide";
 import { forgeResultLabels, useCrystalForge, type ForgeHistoryRecord } from "@/lib/contracts/hooks/useCrystalForge";
 import { shortenAddress } from "@/lib/utils/format";
 
@@ -18,9 +20,32 @@ const resultStyles = [
 ];
 
 export function CrystalForgePanel() {
+  const { t } = useTranslation();
   const [actionError, setActionError] = useState<string | undefined>();
   const forge = useCrystalForge();
   const hasOpenRequest = Boolean(forge.trackedRequestId) && !forge.pendingSettled;
+
+  const forgeSteps = useMemo(
+    () => [
+      { title: t("arena.forge.steps.1.title"), body: t("arena.forge.steps.1.body") },
+      { title: t("arena.forge.steps.2.title"), body: t("arena.forge.steps.2.body") },
+      { title: t("arena.forge.steps.3.title"), body: t("arena.forge.steps.3.body") },
+      { title: t("arena.forge.steps.4.title"), body: t("arena.forge.steps.4.body") },
+    ],
+    [t],
+  );
+
+  const forgeCurrentStep = !forge.isConnected
+    ? 1
+    : !forge.hasForgeAllowance
+      ? 1
+      : hasOpenRequest
+        ? forge.canSettle
+          ? 4
+          : 3
+        : forge.totalPlays > BigInt(0) && !hasOpenRequest
+          ? undefined
+          : 2;
   const latestResult = forge.history[0];
   const latestResultLabel = latestResult ? forgeResultLabels[latestResult.result] : "IDLE";
   const visualState = hasOpenRequest ? "forging" : latestResultLabel.toLowerCase();
@@ -37,6 +62,7 @@ export function CrystalForgePanel() {
     forge.isConfigured &&
     forge.isReady &&
     forge.hasForgeAllowance &&
+    forge.hasEnoughBalance &&
     !hasOpenRequest &&
     !forge.readError &&
     !forge.isTransacting;
@@ -51,15 +77,17 @@ export function CrystalForgePanel() {
         ? "Configure FRX token and CrystalForge addresses for this chain."
         : !forge.isReady
           ? "Crystal Forge cost, allowance, and history are still loading."
-          : !forge.hasForgeAllowance
-          ? "Approve 5 FRX before requesting a forge."
-          : hasOpenRequest && forge.canSettle
-            ? "Settle the pending forge request in a later block."
-            : hasOpenRequest && forge.canRefund
-              ? "This forge request expired and can be refunded."
-              : hasOpenRequest
-                ? "Waiting for a later block before settlement is valid."
-                : "Ready to request a forge.");
+          : !forge.hasEnoughBalance
+            ? `Need at least ${forge.playCostFormatted} FRX to forge.`
+            : !forge.hasForgeAllowance
+              ? "Approve 5 FRX before requesting a forge."
+              : hasOpenRequest && forge.canSettle
+                ? "Settle is ready — confirm Settle forge in your wallet."
+                : hasOpenRequest && forge.canRefund
+                  ? "This forge request expired and can be refunded."
+                  : hasOpenRequest
+                    ? `Waiting for the next block (~${forge.blocksUntilSettle.toString()} block(s)) before Settle unlocks.`
+                    : "Ready to request a forge. After Forge, wait one block, then Settle.");
 
   const runAction = (action: () => void) => {
     try {
@@ -91,7 +119,10 @@ export function CrystalForgePanel() {
         </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+      <PlayStepsGuide title={t("arena.forge.howToTitle")} steps={forgeSteps} currentStep={forgeCurrentStep} />
+      <p className="mt-4 text-sm leading-6 text-[var(--text-muted)]">{t("arena.forge.tips")}</p>
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="rounded-3xl border border-[var(--border-subtle)] bg-[radial-gradient(circle_at_50%_0%,rgba(239,68,68,0.18),rgba(5,5,16,0.9)_62%)] p-6">
           <div className="flex min-h-[320px] flex-col items-center justify-center">
             <div className={`forge-crystal forge-crystal-${visualState}`} aria-hidden>
@@ -223,7 +254,8 @@ function PendingForgeCard({
         <MiniStat label="Current Block" value={currentBlock.toString()} />
       </div>
       <p className="mt-3 text-xs text-[var(--text-muted)]">
-        Status: {settled ? "settled" : "open"} · refunds unlock after request block + 256.
+        Status: {settled ? "settled" : "open"} · Settle unlocks in the block after request block · refunds after +256
+        blocks.
       </p>
     </div>
   );
