@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "cd frontierx-web && npm ci",
+  "buildCommand": "cd frontierx-web && npm run build",
+  "outputDirectory": "frontierx-web/.next"
+}
